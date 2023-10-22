@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+option java_package = "org.example";
+
+service user {
+  rpc LogIn(LogInRequest) returns (LogInResponse);
+  rpc SignUp(SignUpRequest) returns (SignUpResponse);
+  rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
+  rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
+  rpc SeeProfile(SeeProfileRequest) returns (SeeProfileResponse);
+}
+
+message LogInRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LogInResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message SignUpRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message SignUpResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message CreateProfileRequest {
+  string username = 1;
+  string name = 2;
+}
+
+message CreateProfileResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message UpdateProfileRequest {
+  string username = 1;
+  string name = 2;
+}
+
+message UpdateProfileResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message SeeProfileRequest {
+  string username = 1;
+}
+
+message SeeProfileResponse {
+  bool success = 1;
+  string message = 2;
+  string name = 3;
+}
